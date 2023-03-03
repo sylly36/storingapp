@@ -26,3 +26,5 @@ $statement->execute([
     ":type" => $type
 
 ]);
+
+header("Location: ../meldingen/index.php?msg=Melding opgeslagen");
