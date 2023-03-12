@@ -21,15 +21,15 @@
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
-                <select name="group" id="group">
+                <select name="type" id="type">
                     <option value=""> -kies een type-</option>
-                    <option value="A"> achtbaan </option>
-                    <option value="B"> draaiend </option>
-                    <option value="c"> kinder </option>
-                    <option value="D"> horeca </option>
-                    <option value="E"> show </option>
-                    <option value="F"> water </option>
-                    <option value="G"> overige </option>
+                    <option value="achtbaan"> achtbaan </option>
+                    <option value="draaiend"> draaiend </option>
+                    <option value="kinder"> kinder </option>
+                    <option value="horeca"> horeca </option>
+                    <option value="show"> show </option>
+                    <option value="water"> water </option>
+                    <option value="overige"> overige </option>
                 </select>
             </div>
             <div class="form-group">
@@ -46,7 +46,7 @@
                 <input type="text" name="melder" id="melder" class="form-input">
             </div>
             <div class="form-group">
-                <label for="overige">Overige info:</label>
+                <label for="overig">Overige info:</label>
                 <textarea name="overig" id="overig" class="form-input" rows="4"></textarea>
             </div>
             
