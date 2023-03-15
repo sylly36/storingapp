@@ -15,8 +15,6 @@ else
 $melder = $_POST['melder'];
 $overig = $_POST['overig'];
 
-// echo $attractie . " / " . $capaciteit . " / " . $melder . " / " . $type;
-
 //1. Verbinding
 require_once 'conn.php';
 
