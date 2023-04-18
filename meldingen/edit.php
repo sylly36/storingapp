@@ -1,3 +1,15 @@
+<?php 
+session_start();
+
+require_once '../backend/config.php';
+if(!isset($_SESSION['user_id']))
+{
+    $msg = "je moet eerst inloggen!";
+    header("Location: $base_url/inlog/login.php?msg=$msg");
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="nl">
 
@@ -40,10 +52,9 @@
         //5. Ophalen gegevens, tip: gebruik hier fetch().
         $melding = $statement->fetch(PDO::FETCH_ASSOC);
         ?>
-
-        <form action="........." method="POST">
-            <!-- (voeg hier opdracht 7 toe) -->
-
+        <form action="../backend/meldingenController.php" method="POST">
+        <input type="hidden" name="action" value="update">
+        <input type="hidden" name="id" value="<?php echo $melding['id'] ?>">
             <div class="form-group">
                 <label>Naam attractie:</label>
                 <?php echo $melding['attractie']; ?>
@@ -71,7 +82,7 @@
             </div>
             <div class="form-group">
                 <label for="overig">Overige info:</label>
-                <textarea name="overig" id="overig" class="form-input" rows="4">.....</textarea>
+                <textarea name="overig" id="overig" class="form-input" rows="4">...</textarea>
             </div>
             
             <input type="submit" value="Melding opslaan">

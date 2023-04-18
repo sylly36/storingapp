@@ -1,3 +1,15 @@
+<?php 
+session_start();
+
+require_once '../backend/config.php';
+if(!isset($_SESSION['user_id']))
+{
+    $msg = "je moet eerst inloggen!";
+    header("Location: $base_url/inlog/login.php?msg=$msg");
+    exit;
+}
+?>
+
 <!doctype html>
 <html lang="nl">
 
@@ -12,7 +24,7 @@
 
     <div class="container">
         <h1>Nieuwe melding</h1>
-
+        <input type="hidden" name="action" value="create">
         <form action="../backend/meldingenController.php" method="POST">
         
             <div class="form-group">
